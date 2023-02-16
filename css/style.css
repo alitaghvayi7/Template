@@ -1,0 +1,269 @@
+@import url("./font.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  background: #1e1e1e;
+  overflow-x: hidden;
+}
+
+.circle-one {
+  width: 0.1px;
+  height: 0.1px;
+  position: absolute;
+  top: 30%;
+  left: 14%;
+  box-shadow: 0 0 15rem 13rem #ce643a;
+  mix-blend-mode: soft-light;
+  border-radius: 50%;
+  filter: opacity(0.7);
+  z-index: -1;
+}
+
+.circle-two{
+  width: 0.1px;
+  height: 0.1px;
+  position: absolute;
+  top: 50%;
+  right: 25%;
+  box-shadow: 0 0 10rem 12rem #ce643a;
+  mix-blend-mode: soft-light;
+  border-radius: 50%;
+  filter: opacity(0.7);
+  z-index: -1;
+}
+
+.container {
+  width: 100%;
+  padding: 0 2rem 2rem 2rem;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  padding: 2rem;
+  z-index: 1;
+  background-color: rgba(32, 32, 32, 0.1);
+  backdrop-filter: blur(2px);
+  mix-blend-mode: luminosity;
+}
+
+.header .nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 25px;
+  color: #fff;
+}
+
+.header .nav a {
+  text-decoration: none;
+  color: white;
+}
+
+.header .nav .menu {
+  margin: 0;
+  display: none;
+  gap: 2rem;
+}
+
+.header .nav .menu a {
+  font-size: 16px;
+}
+.hum {
+  display: block;
+}
+.hum img {
+  width: 30px;
+}
+
+.content-text {
+  order: 2;
+  padding-left: 0.5rem;
+}
+
+.contant {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.content-title {
+  color: #fff;
+  font-size: 30px;
+  font-weight: bolder;
+  margin-bottom: 2rem;
+}
+.content-par {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 200;
+}
+.image-contant {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  order: 1;
+}
+.image-contant img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: drop-shadow(10px 10px 5px rgba(0,0,0,.4));
+}
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+.btn1 {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 25px;
+  background-color: #ce643a;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+}
+.btn2 {
+  text-decoration: none;
+  color: #ce643a;
+  font-size: 0.75rem;
+  transition: .5s all ease;
+}
+.to-top {
+  display: none;
+}
+
+@keyframes flasher {
+  0% {
+    opacity: 1;
+    transform: rotate(-180deg) translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(-180deg) translateY(-1rem);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .header {
+    padding: 2rem 5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .header .nav {
+    position: sticky;
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-weight: 700;
+    font-size: 25px;
+  }
+
+  .header .nav a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .header .nav .menu {
+    margin: 0;
+    display: flex;
+    gap: 2rem;
+  }
+
+  .header .nav .menu a {
+    font-size: 16px;
+  }
+  .hum {
+    display: none;
+  }
+  .container {
+    padding: 2rem 5rem;
+  }
+  .contant {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .content-text {
+    width: 60%;
+    order: 1;
+  }
+  .content-title {
+    color: #fff;
+    font-size: 47px;
+    font-weight: bolder;
+  }
+  .content-par {
+    color: #fff;
+  }
+  .image-contant {
+    order: 2;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25rem;
+  }
+  .btn {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    justify-content: flex-start;
+  }
+  .btn1 {
+    padding: 10px 30px;
+    font-size: 0.75rem;
+  }
+  .btn2 {
+    font-size: 1rem;
+  }
+  .btn2:hover {
+    color: #fff;
+    padding: 10px 25px;
+    background-color: #ce643a;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+  }
+  .to-top {
+    display: block;
+    position: fixed;
+    bottom: 7%;
+    left: 5rem;
+    cursor: pointer;
+    transform: rotate(-180deg);
+    animation: flasher 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+  }
+  .to-top img {
+    width: 30px;
+  }
+}
